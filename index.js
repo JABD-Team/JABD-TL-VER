@@ -2,7 +2,7 @@
 global.package = require("./package.json")
 console.log("Starting JABD Bot Version " + global.package.version +"...")
 //load config
-global.config = require("./createconfig.js")()
+global.config = require("./createConfig.js")()
 //load data
 global.data = require("./getdata.js")()
 //login
