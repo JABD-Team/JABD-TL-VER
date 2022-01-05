@@ -2,7 +2,22 @@ const { Telegraf } = require('telegraf')
 
 const bot = new Telegraf(global.config.token)
 var date = new Date();
-
+//check update
+var axios = require("axios")
+async function checkupdate() {
+	try {
+		const { data } = await axios.get("https://raw.githubusercontent.com/JABD-Team/JABD-TL-VER/main/package.json");
+		if (data.version != global.package.version) {
+			console.log("Đã có bản cập nhật mới OwO");
+		} else {
+		console.log("Bạn đang sử dụng phiên bản mới nhất UwU");
+		}
+	} catch(e) {
+		console.log("Đã có lỗi xảy ra.");
+		console.log(e)
+	}
+}
+checkupdate()
 bot.on('message', function (ctx) {
     if(ctx.message.text != undefined && ctx.message.text.slice(0,global.config.prefix.length) == global.config.prefix){
                 args = ctx.message.text.slice(global.config.prefix.length).trim().split(/ +/);
@@ -31,6 +46,7 @@ function runCM(ctx){
     }
     if (!ccm) ctx.reply(`Sai lệnh. Sử dụng "${global.config.prefix}help" để xem danh sách lệnh`);
 }
+
 const fs = require('fs');
 const path = require("path");
 const childProcess = require('child_process');
@@ -121,7 +137,6 @@ function load(file, pluginInfo){
         console.error("Không thể load command \""+file+"\" với lỗi: "+err)
     }*/
 }
-
 function installmd(file, pluginInfo){
     if(typeof pluginInfo.nodeDepends == "object"){
         for (var i in pluginInfo.nodeDepends){
@@ -151,5 +166,6 @@ if(!global.config.token){
     console.log("Bot đã được khởi động thành công!")
     console.log("Bot bắt đầu nhận tin nhắn\n");
 	console.log("     /$$$$$  /$$$$$$  /$$$$$$$  /$$$$$$$\n    |__  $$ /$$__  $$| $$__  $$| $$__  $$\n       | $$| $$  \\ $$| $$  \\ $$| $$  \\ $$\n       | $$| $$$$$$$$| $$$$$$$ | $$  | $$\n  /$$  | $$| $$__  $$| $$__  $$| $$  | $$\n | $$  | $$| $$  | $$| $$  \\ $$| $$  | $$\n |  $$$$$$/| $$  | $$| $$$$$$$/| $$$$$$$/\n  \\______/ |__/  |__/|_______/ |_______/\n");
+    console.log("\n")
     bot.launch()
 }
