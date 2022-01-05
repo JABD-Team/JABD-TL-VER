@@ -25,9 +25,11 @@ bot.on('message', function (ctx) {
         }
         if(ctx.message.photo){
             console.log(JSON.stringify(ctx.message, null, 4));
+        } else if(ctx.message.sticker) {
+            console.log("\x1b[K" + "\x1b[1;32m" + "\x1b[1;92m" + "\x1b[38;2;0;255;0m" + "[" + (date.getUTCFullYear()+ "-" + (date.getUTCMonth() + 1)+ "-" + date.getUTCDate()+ "T" + date.getUTCHours()+ "-" + date.getUTCMinutes()+ "-" + date.getUTCSeconds()+ "." + date.getUTCMilliseconds()+ "Z") + "]" + " " + `[${ctx.message.from.id} đến ${ctx.message.chat.id}] : ${ctx.message.sticker.emoji}`);
         } else {
     console.log("\x1b[K" + "\x1b[1;32m" + "\x1b[1;92m" + "\x1b[38;2;0;255;0m" + "[" + (date.getUTCFullYear()+ "-" + (date.getUTCMonth() + 1)+ "-" + date.getUTCDate()+ "T" + date.getUTCHours()+ "-" + date.getUTCMinutes()+ "-" + date.getUTCSeconds()+ "." + date.getUTCMilliseconds()+ "Z") + "]" + " " + `[${ctx.message.from.id} đến ${ctx.message.chat.id}] : ${ctx.message.text}`);
-        /*console.log(JSON.stringify(ctx))*/}})
+        }})
 function runCM(ctx){
     var cm = ctx.message.text.slice(global.config.prefix.length, ctx.message.text.length);
     var ms = cm.split(" ");
