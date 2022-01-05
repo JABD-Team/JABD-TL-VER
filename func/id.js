@@ -18,7 +18,7 @@ function config(){
 }
 
 async function id(ctx){
-    ctx.reply(JSON.stringify(ctx))
+    ctx.reply(ctx.message.from.id)
 }
 
 module.exports = {
