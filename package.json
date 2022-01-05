@@ -1,0 +1,27 @@
+{
+  "name": "testfca",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "axios": "^0.24.0",
+    "crypto": "^1.0.1",
+    "express": "^4.17.1",
+    "facebook-chat-api": "^1.8.0",
+    "fca-unofficial-force": "^10.3.13",
+    "node-telegram-bot-api": "^0.56.0",
+    "request-promise": "^4.2.6",
+    "strip-bom": "^4.0.0",
+    "stripe": "^8.195.0",
+    "sync-request": "^6.1.0",
+    "telegraf": "^4.5.2",
+    "tough-cookie-file-store": "^2.0.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
