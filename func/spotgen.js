@@ -3,7 +3,7 @@ function config(){
         "name": "spotgen",
         "main": "spotgen.js",
         "commandMap": {
-            "mong": {
+            "spotgen": {
                 "more": "",
                 "des": "Gen spotify account",
                 "func": "spotgen"
