@@ -25,6 +25,7 @@ async function spotgen(ctx){
       ctx.reply(`Success\nEmail : ${data.resultout[0].email}\nPassword : ${data.resultout[0].password}`)
     } else {
       ctx.reply(`Failed\nEmail : ${data.resultout[0].email}\nPassword : ${data.resultout[0].password}`)
+    } 
     } catch(err) {
         ctx.reply(err);
     }
