@@ -4,7 +4,7 @@ function config(){
         "main": "Nude.js",
         "commandMap": {
             "mong": {
-                "more": "",
+                "nude": "",
                 "des": "Request ảnh nude",
                 "func": "nude"
             }
